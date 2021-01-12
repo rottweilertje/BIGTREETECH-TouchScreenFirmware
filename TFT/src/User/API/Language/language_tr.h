@@ -99,6 +99,7 @@
     #define TR_1_MM                   "1mm"
     #define TR_5_MM                   "5mm"
     #define TR_10_MM                  "10mm"
+    #define TR_100_MM                 "100mm"
     #define TR_1_PERCENT              "1%"
     #define TR_5_PERCENT              "5%"
     #define TR_10_PERCENT             "10%"

@@ -99,6 +99,7 @@
     #define GR_1_MM                   "1χιλ"
     #define GR_5_MM                   "5χιλ"
     #define GR_10_MM                  "10χιλ"
+    #define GR_100_MM                 "100χιλ"
     #define GR_1_PERCENT              "1%"
     #define GR_5_PERCENT              "5%"
     #define GR_10_PERCENT             "10%"
