@@ -51,10 +51,20 @@ void menuHome(void)
       {
         case KEY_ICON_0: storeCmd("G28 XY\n");   break;
         case KEY_ICON_1:
-          storeCmd("G38.2 Z0\n");
-          if(infoSettings.touchplate_on == 1)
+        if(infoSettings.touchplate_on == 0)
           {
+            storeCmd("G28 Z\n");
+          }
+        if(infoSettings.touchplate_on == 1)
+          {
+            storeCmd("M118 E1 Attach probe\n"); //Remind the user to attach the probe
+            storeCmd("M0 Attach probe\n");      //Make sure a user confirmation is done 
+            storeCmd("G38.2 Z0\n");             //Home down for the touchplate
             storeCmd("G92 Z%.3f\n", infoSettings.touchplate_height);
+            storeCmd("G91\n");                  //Set to Relative
+            storeCmd("G1 Z20 F600\n");          //lifts the Z out of the way
+            storeCmd("G90\n");                  //Set back to Absolute (which is the default)
+            storeCmd("M118 E1 Remove probe\n"); //Remind the user to remove the probe
           }
           break;
         case KEY_ICON_4: storeCmd("G92 X0\n"); break;
