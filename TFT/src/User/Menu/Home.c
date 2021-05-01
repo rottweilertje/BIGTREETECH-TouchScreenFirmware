@@ -51,7 +51,7 @@ void menuHome(void)
       {
         case KEY_ICON_0: storeCmd("G28 XY\n");   break;
         case KEY_ICON_1:
-          storeCmd("G28 Z\n");
+          storeCmd("G38.2 Z0\n");
           if(infoSettings.touchplate_on == 1)
           {
             storeCmd("G92 Z%.3f\n", infoSettings.touchplate_height);
